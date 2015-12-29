@@ -924,11 +924,15 @@ $.support.pjax =
 
 $.support.pjax ? enable() : disable()
 
+   return pjax;
+
+
 };
     if (typeof window === 'undefined' || !window.jQuery ) {
 	module.exports = initPJAX;
     } else {
         initPJAX(jQuery);
     }
+
 
 })();
