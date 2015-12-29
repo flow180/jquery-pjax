@@ -568,7 +568,7 @@ function cloneContents(container) {
   // Unmark script tags as already being eval'd so they can get executed again
   // when restored from cache. HAXX: Uses jQuery internal method.
   cloned.find('script').each(function(){
-    if (!this.src) jQuery._data(this, 'globalEval', false)
+    if (!this.src) $._data(this, 'globalEval', false)
   })
   return [container.selector, cloned.contents()]
 }
@@ -925,7 +925,7 @@ $.support.pjax =
 $.support.pjax ? enable() : disable()
 
 };
-    if (typeof window === 'undefined') {
+    if (typeof window === 'undefined' || !window.jQuery ) {
 	module.exports = initPJAX;
     } else {
         initPJAX(jQuery);
